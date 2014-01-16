@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>me.evan.dev-ruby-workflow</string>
+	<key>connections</key>
+	<dict>
+		<key>21557827-8003-42B7-A042-16D4C9278FEC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9887B1CD-7E1E-4EA5-8E2F-B78F0978476D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Evan Alter</string>
+	<key>description</key>
+	<string>This opens 3 tabs in terminal with all the things I like running for dev.</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Development Environment</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)	tell application "Terminal"		activate		do script "cd " &amp; q		activate		do script "fs" in tab 1 of front window		my makeTab()		activate		do script "rc" in tab 2 of front window		my makeTab()		activate		do script "sp" in tab 3 of front window	end tellend alfred_scripton makeTab()	tell application "System Events" to keystroke "t" using {command down}	delay 0.2end makeTab</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>9887B1CD-7E1E-4EA5-8E2F-B78F0978476D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>keyword</key>
+				<string>dev</string>
+				<key>runningsubtext</key>
+				<string>searching...</string>
+				<key>script</key>
+				<string>LANG=en_US.UTF-8 /Users/gremlin/.rbenv/shims/ruby ./main.rb {query}</string>
+				<key>title</key>
+				<string>Start developing</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>21557827-8003-42B7-A042-16D4C9278FEC</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>21557827-8003-42B7-A042-16D4C9278FEC</key>
+		<dict>
+			<key>ypos</key>
+			<real>70</real>
+		</dict>
+		<key>9887B1CD-7E1E-4EA5-8E2F-B78F0978476D</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
